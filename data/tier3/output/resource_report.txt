@@ -1,0 +1,9 @@
+Computed 159 resource lines for 53 exams; 32938 sheets (65.876 reams); 13.4% below naive baseline
+success=True
+totals={'exams': 53, 'line_items': 159, 'sheets_total': 32938, 'reams_total': 65.876}
+baseline_comparison={'baseline_sheets_total': 38034, 'precise_sheets_total': 32938, 'sheets_saved': 5096, 'reduction_pct_vs_naive': 13.4}
+
+Procurement by item:
+  Answer booklet: copies=2722, sheets=20144, reams=40.288
+  Cover sheet: copies=2722, sheets=2722, reams=5.444
+  Question paper: copies=2722, sheets=10072, reams=20.144

@@ -1,0 +1,47 @@
+Assigned 255 duties across 40 staff; balance_std=2.094
+success=True
+duties=255
+duty_balance_std=2.0939
+unfilled=0
+
+Duties per staff (non-zero):
+  S001: 8
+  S002: 8
+  S003: 8
+  S004: 8
+  S006: 8
+  S007: 8
+  S008: 8
+  S009: 8
+  S010: 7
+  S012: 7
+  S013: 7
+  S014: 7
+  S015: 7
+  S016: 7
+  S018: 7
+  S019: 7
+  S020: 7
+  S021: 7
+  S022: 7
+  S024: 7
+  S025: 7
+  S026: 7
+  S027: 7
+  S028: 7
+  S030: 7
+  S031: 7
+  S032: 7
+  S033: 7
+  S034: 7
+  S036: 7
+  S037: 7
+  S038: 7
+  S039: 7
+  S040: 7
+  S005: 2
+  S011: 2
+  S017: 2
+  S023: 1
+  S029: 1
+  S035: 1

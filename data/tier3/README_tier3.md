@@ -47,6 +47,12 @@ From `CSC 315` + credits `1.5`:
 - `credits` / `duration_hours` = `1.5`
 - `exam_type` from course name keywords or explicit column
 
+## Scheduling note
+
+Practical course enrolments are **capped at 55** so they fit `ComputerLab` capacity (hard CSP constraint). Theory courses use ExamHall / LectureHall.
+
+Sample CSP output (after running the solver): `data/tier3/output/schedule.csv`.
+
 ## Load into Supabase
 
 ```bash

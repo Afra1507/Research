@@ -1,41 +1,41 @@
 staff_id,display_name,department,designation,can_be_chief_supervisor,can_be_invigilator,can_be_hall_attendant,can_be_technical_officer,max_duties_per_period,unavailable_slots,teaches_course_codes
-S001,Staff Member 001,CSC,Senior Lecturer,Y,Y,N,N,4,,CSC 107;CSC 405
-S002,Staff Member 002,CSC,Lecturer,Y,Y,N,N,4,,CSC 110
-S003,Staff Member 003,CSC,Lecturer,N,Y,N,N,4,,CSC 305
-S004,Staff Member 004,CSC,Demonstrator,N,Y,N,N,4,,
-S005,Staff Member 005,CSC,Technical Officer,N,N,N,Y,4,,
-S006,Staff Member 006,CSC,Admin Assistant,N,N,Y,N,6,,
-S007,Staff Member 007,CSC,Senior Lecturer,Y,Y,N,N,4,,
-S008,Staff Member 008,CSC,Lecturer,Y,Y,N,N,4,,CSC 208;CSC 445
-S009,Staff Member 009,CSC,Lecturer,N,Y,N,N,4,,CSC 216;CSC 402
-S010,Staff Member 010,CSC,Demonstrator,N,Y,N,N,4,,
-S011,Staff Member 011,CSC,Technical Officer,N,N,N,Y,4,,
-S012,Staff Member 012,CSC,Admin Assistant,N,N,Y,N,6,,
-S013,Staff Member 013,CSC,Senior Lecturer,Y,Y,N,N,4,,
-S014,Staff Member 014,CSC,Lecturer,Y,Y,N,N,4,,CSC 415
-S015,Staff Member 015,CSC,Lecturer,N,Y,N,N,4,,CSC 315;CSC 355;CSC 430;CSC 450
-S016,Staff Member 016,CSC,Demonstrator,N,Y,N,N,4,,
-S017,Staff Member 017,CSC,Technical Officer,N,N,N,Y,4,,
-S018,Staff Member 018,CSC,Admin Assistant,N,N,Y,N,6,,
-S019,Staff Member 019,CSC,Senior Lecturer,Y,Y,N,N,4,,CSC 203;CSC 215;CSC 401
-S020,Staff Member 020,CSC,Lecturer,Y,Y,N,N,4,,CSC 207;CSC 314;CSC 435;CSC 440
-S021,Staff Member 021,CSC,Lecturer,N,Y,N,N,4,,CSC 301;CSC 310
-S022,Staff Member 022,CSC,Demonstrator,N,Y,N,N,4,,
-S023,Staff Member 023,CSC,Technical Officer,N,N,N,Y,4,,
-S024,Staff Member 024,CSC,Admin Assistant,N,N,Y,N,6,,
-S025,Staff Member 025,CSC,Senior Lecturer,Y,Y,N,N,4,,CSC 105
-S026,Staff Member 026,CSC,Lecturer,Y,Y,N,N,4,,CSC 106;CSC 205;CSC 325;CSC 335;CSC 410
-S027,Staff Member 027,CSC,Lecturer,N,Y,N,N,4,,CSC 102;CSC 206;CSC 209;CSC 210;CSC 316;CSC 345
-S028,Staff Member 028,CSC,Demonstrator,N,Y,N,N,4,,
-S029,Staff Member 029,CSC,Technical Officer,N,N,N,Y,4,,
-S030,Staff Member 030,CSC,Admin Assistant,N,N,Y,N,6,,
-S031,Staff Member 031,CSC,Senior Lecturer,Y,Y,N,N,4,,CSC 104;CSC 108;CSC 320;CSC 425
-S032,Staff Member 032,CSC,Lecturer,Y,Y,N,N,4,,CSC 111;CSC 350
-S033,Staff Member 033,CSC,Lecturer,N,Y,N,N,4,,CSC 302
-S034,Staff Member 034,CSC,Demonstrator,N,Y,N,N,4,,
-S035,Staff Member 035,CSC,Technical Officer,N,N,N,Y,4,,
-S036,Staff Member 036,CSC,Admin Assistant,N,N,Y,N,6,,
-S037,Staff Member 037,CSC,Senior Lecturer,Y,Y,N,N,4,,CSC 330
-S038,Staff Member 038,CSC,Lecturer,Y,Y,N,N,4,,CSC 101;CSC 103;CSC 109;CSC 112;CSC 420
-S039,Staff Member 039,CSC,Lecturer,N,Y,N,N,4,,CSC 201;CSC 202;CSC 204;CSC 214;CSC 217;CSC 340
-S040,Staff Member 040,CSC,Demonstrator,N,Y,N,N,4,,
+S001,Staff Member 001,CSC,Senior Lecturer,Y,Y,Y,N,12,,CSC 107;CSC 405
+S002,Staff Member 002,CSC,Lecturer,Y,Y,Y,N,12,,CSC 110
+S003,Staff Member 003,CSC,Lecturer,N,Y,Y,N,12,,CSC 305
+S004,Staff Member 004,CSC,Demonstrator,N,Y,Y,N,12,,
+S005,Staff Member 005,CSC,Technical Officer,N,N,N,Y,12,,
+S006,Staff Member 006,CSC,Admin Assistant,N,N,Y,N,16,,
+S007,Staff Member 007,CSC,Senior Lecturer,Y,Y,Y,N,12,,
+S008,Staff Member 008,CSC,Lecturer,Y,Y,Y,N,12,,CSC 208;CSC 445
+S009,Staff Member 009,CSC,Lecturer,N,Y,Y,N,12,,CSC 216;CSC 402
+S010,Staff Member 010,CSC,Demonstrator,N,Y,Y,N,12,,
+S011,Staff Member 011,CSC,Technical Officer,N,N,N,Y,12,,
+S012,Staff Member 012,CSC,Admin Assistant,N,N,Y,N,16,,
+S013,Staff Member 013,CSC,Senior Lecturer,Y,Y,Y,N,12,,
+S014,Staff Member 014,CSC,Lecturer,Y,Y,Y,N,12,,CSC 415
+S015,Staff Member 015,CSC,Lecturer,N,Y,Y,N,12,,CSC 315;CSC 355;CSC 430;CSC 450
+S016,Staff Member 016,CSC,Demonstrator,N,Y,Y,N,12,,
+S017,Staff Member 017,CSC,Technical Officer,N,N,N,Y,12,,
+S018,Staff Member 018,CSC,Admin Assistant,N,N,Y,N,16,,
+S019,Staff Member 019,CSC,Senior Lecturer,Y,Y,Y,N,12,,CSC 203;CSC 215;CSC 401
+S020,Staff Member 020,CSC,Lecturer,Y,Y,Y,N,12,,CSC 207;CSC 314;CSC 435;CSC 440
+S021,Staff Member 021,CSC,Lecturer,N,Y,Y,N,12,,CSC 301;CSC 310
+S022,Staff Member 022,CSC,Demonstrator,N,Y,Y,N,12,,
+S023,Staff Member 023,CSC,Technical Officer,N,N,N,Y,12,,
+S024,Staff Member 024,CSC,Admin Assistant,N,N,Y,N,16,,
+S025,Staff Member 025,CSC,Senior Lecturer,Y,Y,Y,N,12,,CSC 105
+S026,Staff Member 026,CSC,Lecturer,Y,Y,Y,N,12,,CSC 106;CSC 205;CSC 325;CSC 335;CSC 410
+S027,Staff Member 027,CSC,Lecturer,N,Y,Y,N,12,,CSC 102;CSC 206;CSC 209;CSC 210;CSC 316;CSC 345
+S028,Staff Member 028,CSC,Demonstrator,N,Y,Y,N,12,,
+S029,Staff Member 029,CSC,Technical Officer,N,N,N,Y,12,,
+S030,Staff Member 030,CSC,Admin Assistant,N,N,Y,N,16,,
+S031,Staff Member 031,CSC,Senior Lecturer,Y,Y,Y,N,12,,CSC 104;CSC 108;CSC 320;CSC 425
+S032,Staff Member 032,CSC,Lecturer,Y,Y,Y,N,12,,CSC 111;CSC 350
+S033,Staff Member 033,CSC,Lecturer,N,Y,Y,N,12,,CSC 302
+S034,Staff Member 034,CSC,Demonstrator,N,Y,Y,N,12,,
+S035,Staff Member 035,CSC,Technical Officer,N,N,N,Y,12,,
+S036,Staff Member 036,CSC,Admin Assistant,N,N,Y,N,16,,
+S037,Staff Member 037,CSC,Senior Lecturer,Y,Y,Y,N,12,,CSC 330
+S038,Staff Member 038,CSC,Lecturer,Y,Y,Y,N,12,,CSC 101;CSC 103;CSC 109;CSC 112;CSC 420
+S039,Staff Member 039,CSC,Lecturer,N,Y,Y,N,12,,CSC 201;CSC 202;CSC 204;CSC 214;CSC 217;CSC 340
+S040,Staff Member 040,CSC,Demonstrator,N,Y,Y,N,12,,

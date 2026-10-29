@@ -29,12 +29,12 @@ Work top to bottom. Do not skip Step 1 (secrets) before any commit.
 | 2 | Tier 3 synthetic data | DONE | CSC-only CSVs; `AS2022468` IDs; credits max 2.0 | — |
 | 3 | Supabase schema + seed | DONE | Tables + RLS + Tier 3 seed in project | Optional: add `DATABASE_URL` to `.env` |
 | 4 | First safe commit & push | DONE | Pushed to GitHub without `.env` | — |
-| 5 | Module A — Course parser | TODO | — | `parser.py` + tests |
-| 6 | Module B — CSP scheduler | TODO | — | Conflict-free slot assignment |
-| 7 | Module C — GA optimiser | TODO | — | Soft-constraint fitness |
-| 8 | Module D — HR allocator | TODO | — | Invigilator / attendant ratios |
-| 9 | Module E — Resource calculator | TODO | — | Paper / booklet totals |
-| 10 | FastAPI backend API | TODO | — | REST routes + engine wiring |
+| 5 | Module A — Course parser | DONE | Parses `CSC 315 2.0`; 10/10 tests pass | — |
+| 6 | Module B — CSP scheduler | DONE | 53/53 courses; 0 hard conflicts; ~3s | — |
+| 7 | Module C — GA optimiser | DONE | Soft fitness improved; 5 runs; 0 hard conflicts | — |
+| 8 | Module D — HR allocator | DONE | Duty roster + balance std; ratios applied | — |
+| 9 | Module E — Resource calculator | DONE | 32,938 sheets; ~13.4% below naive baseline | — |
+| 10 | FastAPI backend API | NEXT | — | REST routes + engine wiring |
 | 11 | React frontend + auth | TODO | — | Role dashboards (admin / lecturer / student) |
 | 12 | Evaluation + SUS | TODO | — | Metrics vs baseline; usability |
 | 13 | Exam Dept Tier 1 request | TODO (parallel) | Field list designed in chat/plan | Letter, Annex A, ethics, submission |
@@ -156,85 +156,147 @@ GitHub shows the project; `.env` is absent remotely. **Met.**
 
 ## Step 5 — Module A: Course code parser
 
-**Status:** NEXT
+**Status:** DONE (29 Oct 2026)
 
-### What we will achieve
-- Extract year, department, sequence, credits, exam type, duration, year-session from course records
+### What we achieved
+- Parses campus form **`CSC 315 2.0`** → dept, year (leading digit), seq, credits, duration, session
+- Also parses CSV/DB form `course_code=CSC 315` + `credits=2.0`
+- Infers Theory/Practical from course name keywords (or explicit `exam_type`)
+- Credits limited to 1.0 / 1.5 / 2.0 (rejects 2.5)
+- All 53 Tier 3 courses parse; **10/10** unit tests pass
 
 ### Deliverables
-- [ ] `backend/engine/parser.py`
-- [ ] Unit tests in `backend/tests/`
-- [ ] Run against `data/tier3/courses.csv`
+- [x] `backend/engine/parser.py`
+- [x] `backend/config.json` (session map + practical keywords)
+- [x] `backend/tests/test_parser.py`
+- [x] Validated against `data/tier3/courses.csv`
 
 ### Exit criteria
-All synthetic courses parse without error; Practical/Theory flagged correctly.
+All synthetic courses parse without error; Practical/Theory flagged correctly. **Met.**
+
+### Quick demo
+```bash
+python backend/engine/parser.py "CSC 315 2.0"
+python -m unittest backend.tests.test_parser -v
+```
 
 ---
 
 ## Step 6 — Module B: CSP scheduling engine
 
-**Status:** TODO
+**Status:** DONE (29 Oct 2026)
 
-### What we will achieve
-- Conflict-free exam timetable satisfying hard constraints
+### What we achieved
+- CSP backtracking scheduler with MRV heuristic
+- All **53** Tier 3 CSC courses scheduled with **0 hard conflicts** in ~**2.6–3.2 s**
+- Outputs under `data/tier3/output/`: `schedule.csv`, `schedule.json`, `conflict_report.txt`
+- Practical enrolments capped at 55 so they fit Computer Lab capacity (hard constraint)
 
-### Hard constraints (must satisfy)
-- No shared-student courses in same slot
-- Year–session times respected
-- Room type + capacity match
-- No lecturer on two exams at once
+### Hard constraints enforced
+- Year → fixed session (Y1 08:00, Y2 10:00, Y3 13:00, Y4 15:30)
+- No shared-student courses in overlapping times
+- Room type match (Theory→ExamHall/LectureHall; Practical→ComputerLab)
+- Room capacity ≥ enrolled
+- No lecturer with two overlapping exams
+- No room double-booking in overlapping times
 
 ### Deliverables
-- [ ] `backend/engine/csp_solver.py`
-- [ ] Output schedule CSV/JSON + conflict report (target: **0** hard conflicts)
+- [x] `backend/engine/csp_solver.py`
+- [x] `backend/tests/test_csp_solver.py` (7 tests)
+- [x] Schedule + conflict report export
 
 ### Exit criteria
-Full synthetic semester schedules in &lt; 60 seconds with zero hard conflicts.
+Full synthetic semester schedules in &lt; 60 seconds with zero hard conflicts. **Met.**
+
+### Quick demo
+```bash
+python backend/engine/csp_solver.py
+python -m unittest backend.tests.test_csp_solver -v
+```
 
 ---
 
 ## Step 7 — Module C: Genetic Algorithm optimiser
 
-**Status:** TODO
+**Status:** DONE (29 Oct 2026)
 
-### What we will achieve
-- Improve soft constraints after CSP (balance, gaps, large cohorts in morning, staff load)
+### What we achieved
+- GA refines the CSP schedule **without breaking hard constraints**
+- Soft fitness improved (example run: **1.68 → 1.91**); best of **5** independent runs
+- Still **0 hard conflicts**; year session times unchanged
+- Outputs: `schedule_ga.csv`, `ga_summary.json`, `ga_report.txt`
+
+### Soft objectives in the fitness function
+1. Even distribution of exams across days
+2. Penalise same-day consecutive exams for the same student
+3. Prefer earlier dates for large-enrolment courses
+4. More even lecturer exam counts
 
 ### Deliverables
-- [ ] `backend/engine/ga_optimiser.py`
-- [ ] Fitness function; report best of 5 runs
+- [x] `backend/engine/ga_optimiser.py`
+- [x] `backend/tests/test_ga_optimiser.py` (8 tests)
+- [x] Best-of-5 runs + fitness before/after report
+
+### Quick demo
+```bash
+cd backend
+python -m engine.ga_optimiser
+python -m unittest backend.tests.test_ga_optimiser -v
+```
 
 ---
 
 ## Step 8 — Module D: Human resource allocator
 
-**Status:** TODO
+**Status:** DONE (29 Oct 2026)
 
-### What we will achieve
-- Duty roster using proposal ratios (Theory: 1 CS + 1 invig/30 + 1 attendant/60; Practical: tighter ratios + TO)
+### What we achieved
+- Assigns Chief Supervisor / Invigilator / Hall Attendant / Technical Officer per exam
+- Theory & Practical ratios from the proposal (ceil division)
+- Hard rules: no overlap, no own-course lecturer, ≥1 rest session between same-day duties, role flags + max duties
+- Duty balance index = population std. dev. of duties among staff who were assigned
+- Outputs: `staff_duties.csv`, `hr_report.txt`, `hr_summary.json`
 
 ### Deliverables
-- [ ] `backend/engine/hr_allocator.py`
-- [ ] Duty balance metric (std. dev. of duties)
+- [x] `backend/engine/hr_allocator.py`
+- [x] `backend/tests/test_hr_allocator.py` (10 tests)
+- [x] Duty balance metric
+
+### Quick demo
+```bash
+python backend/engine/hr_allocator.py
+python -m unittest backend.tests.test_hr_allocator -v
+```
 
 ---
 
 ## Step 9 — Module E: Resource calculator
 
-**Status:** TODO
+**Status:** DONE (29 Oct 2026)
 
-### What we will achieve
-- Precise paper/booklet/ream estimates with 5%/3% buffers
+### What we achieved
+- Per-exam stationery lines: Question paper, Answer booklet, Cover sheet
+- Buffers: Theory **5%**, Practical **3%** (`copies = ceil(enrolled × (1+buffer))`)
+- Aggregated procurement report in sheets and reams (ream size 500)
+- Vs naive baseline (round-to-10 then +10%): **~13.4% fewer sheets** on Tier 3
+- Outputs: `exam_resources.csv`, `procurement_report.csv`, `resource_report.txt`, `resource_summary.json`
 
 ### Deliverables
-- [ ] `backend/engine/resource_calc.py`
-- [ ] Procurement-style summary report
+- [x] `backend/engine/resource_calc.py`
+- [x] `backend/tests/test_resource_calc.py` (9 tests)
+- [x] Procurement-style summary report
+
+### Quick demo
+```bash
+python backend/engine/resource_calc.py
+python -m unittest backend.tests.test_resource_calc -v
+```
 
 ---
 
 ## Step 10 — FastAPI backend
 
-**Status:** TODO
+**Status:** NEXT
 
 ### What we will achieve
 - REST API that runs engines and reads/writes Supabase Postgres
@@ -310,7 +372,12 @@ Working system + evaluation results + clear statement of which data tier was use
 2. ~~**Step 2** — Generate Tier 3 synthetic CSVs~~ DONE
 3. ~~**Step 3** — Supabase tables + seed~~ DONE
 4. ~~**Step 4** — First commit & push~~ DONE
-5. **Step 5** — Course parser ← next
+5. ~~**Step 5** — Course parser~~ DONE
+6. ~~**Step 6** — CSP scheduling engine~~ DONE
+7. ~~**Step 7** — Genetic Algorithm optimiser~~ DONE
+8. ~~**Step 8** — Human resource allocator~~ DONE
+9. ~~**Step 9** — Resource calculator~~ DONE
+10. **Step 10** — FastAPI backend ← next
 
 Start Exam Dept letter (Step 13) in parallel whenever supervisor is ready — it does not block coding.
 

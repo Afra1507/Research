@@ -1,0 +1,8 @@
+GA best of 5 runs; fitness 1.6842 → 1.9111
+success=True
+hard_conflicts=0
+best_run_index=2
+run_fitness=[1.9010890143450923, 1.9046668256420383, 1.9110505167946796, 1.8964050487242667, 1.8981941704701495]
+fitness_before={'total': 1.6841864280038488, 'day_balance': 0.511026241257376, 'student_gaps': 0.4, 'large_early': 0.5921718527177858, 'lecturer_balance': 0.365704507620407}
+fitness_after={'total': 1.9110505167946796, 'day_balance': 0.6671614106318448, 'student_gaps': 0.4, 'large_early': 0.6805830019882385, 'lecturer_balance': 0.365704507620407}
+elapsed_seconds=12.839

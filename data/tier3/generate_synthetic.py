@@ -154,17 +154,26 @@ def build_courses() -> list[dict]:
 
 
 def build_staff(n: int = 40) -> list[dict]:
+    # Role flags: (designation, chief, invigilator, attendant, technical_officer)
+    # Demonstrators/lecturers may also attend halls (common in SL public universities).
     designations = [
-        ("Senior Lecturer", True, True, False, False),
-        ("Lecturer", True, True, False, False),
-        ("Lecturer", False, True, False, False),
-        ("Demonstrator", False, True, False, False),
+        ("Senior Lecturer", True, True, True, False),
+        ("Lecturer", True, True, True, False),
+        ("Lecturer", False, True, True, False),
+        ("Demonstrator", False, True, True, False),
         ("Technical Officer", False, False, False, True),
         ("Admin Assistant", False, False, True, False),
     ]
     staff: list[dict] = []
     for i in range(1, n + 1):
         des, chief, inv, att, to = designations[(i - 1) % len(designations)]
+        # Duty caps sized for a full CSC semester (~50 exams, multi-role per paper)
+        if des == "Admin Assistant":
+            max_duties = 16
+        elif des == "Technical Officer":
+            max_duties = 12
+        else:
+            max_duties = 12
         staff.append(
             {
                 "staff_id": f"S{i:03d}",
@@ -175,7 +184,7 @@ def build_staff(n: int = 40) -> list[dict]:
                 "can_be_invigilator": "Y" if inv else "N",
                 "can_be_hall_attendant": "Y" if att else "N",
                 "can_be_technical_officer": "Y" if to else "N",
-                "max_duties_per_period": 4 if des != "Admin Assistant" else 6,
+                "max_duties_per_period": max_duties,
                 "unavailable_slots": "",
                 "teaches_course_codes": "",
             }
@@ -298,7 +307,20 @@ def build_enrolments(courses: list[dict]) -> list[dict]:
         if key not in seen:
             seen.add(key)
             unique.append(r)
-    return unique
+
+    # Cap practical enrolments so they fit ComputerLab capacity (hard CSP constraint)
+    practical_codes = {c["course_code"] for c in courses if c["exam_type"] == "Practical"}
+    max_practical = 55  # largest lab is 60; leave headroom
+    by_course: dict[str, list[dict]] = {}
+    for r in unique:
+        by_course.setdefault(r["course_code"], []).append(r)
+    capped: list[dict] = []
+    for code, erows in by_course.items():
+        if code in practical_codes and len(erows) > max_practical:
+            capped.extend(RNG.sample(erows, k=max_practical))
+        else:
+            capped.extend(erows)
+    return capped
 
 
 def enrolment_counts(enrolments: list[dict]) -> list[dict]:

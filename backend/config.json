@@ -1,0 +1,19 @@
+{
+  "department_code": "CSC",
+  "course_code_regex": "^([A-Za-z]+)\\s+(\\d{3})(?:\\s+(\\d+(?:\\.\\d+)?))?$",
+  "max_written_credits": 2.0,
+  "allowed_credits": [1.0, 1.5, 2.0],
+  "year_session_map": {
+    "1": "08:00",
+    "2": "10:00",
+    "3": "13:00",
+    "4": "15:30"
+  },
+  "practical_keywords": [
+    "laboratory",
+    "lab",
+    "practical",
+    "workshop",
+    "studio"
+  ]
+}
