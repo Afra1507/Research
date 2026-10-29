@@ -1,0 +1,44 @@
+# Secrets — never commit
+.env
+.env.local
+.env.*.local
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+build/
+
+# Node / frontend
+node_modules/
+dist/
+build/
+.vite/
+*.local
+
+# Institutional data (Tier 1) — keep local only
+data/tier1/*
+!data/tier1/.gitkeep
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and temp
+*.log
+tmp/
+temp/
+.cache/

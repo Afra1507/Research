@@ -1,0 +1,12 @@
+room_id,room_name,building,capacity,room_type,exam_usable,facilities,available_for_exams
+FOC-LH-01,Lecture Hall 1,Faculty of Computing,200,ExamHall,Y,"desks,projector",Y
+FOC-LH-02,Lecture Hall 2,Faculty of Computing,180,ExamHall,Y,"desks,projector",Y
+FOC-LH-03,Lecture Hall 3,Faculty of Computing,150,ExamHall,Y,"desks,projector",Y
+FOC-LH-04,Lecture Hall 4,Faculty of Computing,120,ExamHall,Y,"desks,projector",Y
+FOC-MH-01,Medium Hall 1,Faculty of Computing,80,LectureHall,Y,desks,Y
+FOC-MH-02,Medium Hall 2,Faculty of Computing,70,LectureHall,Y,desks,Y
+FOC-MH-03,Medium Hall 3,Faculty of Computing,60,LectureHall,Y,desks,Y
+FOC-MH-04,Medium Hall 4,Faculty of Computing,55,LectureHall,Y,desks,Y
+FOC-MH-05,Medium Hall 5,Faculty of Computing,50,LectureHall,Y,desks,Y
+FOC-LAB-01,Computer Lab 1,Faculty of Computing,60,ComputerLab,Y,"PCs,projector",Y
+FOC-LAB-02,Computer Lab 2,Faculty of Computing,40,ComputerLab,Y,"PCs,projector",Y

@@ -1,0 +1,7 @@
+item,exam_type,sheets_per_student,waste_buffer_pct,ream_size,notes
+Question paper,Theory,4,5,500,Printed question paper set
+Answer booklet,Theory,8,5,500,Standard answer booklet
+Cover sheet,Theory,1,5,500,
+Question paper,Practical,2,3,500,
+Answer booklet,Practical,4,3,500,Shorter practical script
+Cover sheet,Practical,1,3,500,

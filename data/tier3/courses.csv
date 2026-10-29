@@ -1,0 +1,54 @@
+course_code,course_name,department_code,year_level,semester,credits,exam_type,has_theory_exam,has_practical_exam,offering_status,lecturer_staff_id,session_time,duration_hours
+CSC 101,Fundamentals of Computing,CSC,1,2,2.0,Theory,Y,N,Active,S038,08:00,2.0
+CSC 102,Discrete Mathematics,CSC,1,2,1.5,Theory,Y,N,Active,S027,08:00,1.5
+CSC 103,Programming Principles,CSC,1,2,1.0,Theory,Y,N,Active,S038,08:00,1.0
+CSC 104,Computer Systems,CSC,1,2,2.0,Theory,Y,N,Active,S031,08:00,2.0
+CSC 105,Data Structures,CSC,1,2,1.5,Theory,Y,N,Active,S025,08:00,1.5
+CSC 106,Database Systems,CSC,1,2,1.5,Theory,Y,N,Active,S026,08:00,1.5
+CSC 107,Operating Systems,CSC,1,2,1.5,Theory,Y,N,Active,S001,08:00,1.5
+CSC 108,Software Engineering,CSC,1,2,1.0,Theory,Y,N,Active,S031,08:00,1.0
+CSC 109,Computer Networks,CSC,1,2,2.0,Theory,Y,N,Active,S038,08:00,2.0
+CSC 110,Algorithms and Complexity,CSC,1,2,2.0,Theory,Y,N,Active,S002,08:00,2.0
+CSC 111,Programming Laboratory,CSC,1,2,1.5,Practical,N,Y,Active,S032,08:00,1.5
+CSC 112,Database Practical,CSC,1,2,2.0,Practical,N,Y,Active,S038,08:00,2.0
+CSC 201,Web Technologies,CSC,2,2,1.5,Theory,Y,N,Active,S039,10:00,1.5
+CSC 202,Object Oriented Design,CSC,2,2,1.0,Theory,Y,N,Active,S039,10:00,1.0
+CSC 203,Artificial Intelligence,CSC,2,2,1.5,Theory,Y,N,Active,S019,10:00,1.5
+CSC 204,Machine Learning Foundations,CSC,2,2,2.0,Theory,Y,N,Active,S039,10:00,2.0
+CSC 205,Information Security,CSC,2,2,1.5,Theory,Y,N,Active,S026,10:00,1.5
+CSC 206,Human Computer Interaction,CSC,2,2,1.0,Theory,Y,N,Active,S027,10:00,1.0
+CSC 207,Distributed Systems,CSC,2,2,1.5,Theory,Y,N,Active,S020,10:00,1.5
+CSC 208,Compiler Construction,CSC,2,2,2.0,Theory,Y,N,Active,S008,10:00,2.0
+CSC 209,Research Methods,CSC,2,2,1.0,Theory,Y,N,Active,S027,10:00,1.0
+CSC 210,Professional Practice,CSC,2,2,2.0,Theory,Y,N,Active,S027,10:00,2.0
+CSC 214,Fundamentals of Computing,CSC,2,2,1.0,Theory,Y,N,Active,S039,10:00,1.0
+CSC 215,Discrete Mathematics,CSC,2,2,1.5,Theory,Y,N,Active,S019,10:00,1.5
+CSC 216,Networking Laboratory,CSC,2,2,1.5,Practical,N,Y,Active,S009,10:00,1.5
+CSC 217,Software Project Workshop,CSC,2,2,2.0,Practical,N,Y,Active,S039,10:00,2.0
+CSC 301,Programming Principles,CSC,3,2,1.0,Theory,Y,N,Active,S021,13:00,1.0
+CSC 302,Computer Systems,CSC,3,2,1.0,Theory,Y,N,Active,S033,13:00,1.0
+CSC 305,Data Structures,CSC,3,2,1.0,Theory,Y,N,Active,S003,13:00,1.0
+CSC 310,Database Systems,CSC,3,2,1.5,Theory,Y,N,Active,S021,13:00,1.5
+CSC 314,Operating Systems,CSC,3,2,2.0,Theory,Y,N,Active,S020,13:00,2.0
+CSC 315,Software Engineering,CSC,3,2,1.5,Theory,Y,N,Active,S015,13:00,1.5
+CSC 316,Computer Networks,CSC,3,2,1.0,Theory,Y,N,Active,S027,13:00,1.0
+CSC 320,Algorithms and Complexity,CSC,3,2,1.5,Theory,Y,N,Active,S031,13:00,1.5
+CSC 325,Web Technologies,CSC,3,2,1.5,Theory,Y,N,Active,S026,13:00,1.5
+CSC 330,Object Oriented Design,CSC,3,2,1.0,Theory,Y,N,Active,S037,13:00,1.0
+CSC 335,Artificial Intelligence,CSC,3,2,1.0,Theory,Y,N,Active,S026,13:00,1.0
+CSC 355,Machine Learning Foundations,CSC,3,2,2.0,Theory,Y,N,Active,S015,13:00,2.0
+CSC 340,Machine Learning Laboratory,CSC,3,2,2.0,Practical,N,Y,Active,S039,13:00,2.0
+CSC 345,Web Development Practical,CSC,3,2,1.0,Practical,N,Y,Active,S027,13:00,1.0
+CSC 350,Systems Programming Lab,CSC,3,2,1.0,Practical,N,Y,Active,S032,13:00,1.0
+CSC 401,Information Security,CSC,4,2,1.0,Theory,Y,N,Active,S019,15:30,1.0
+CSC 402,Human Computer Interaction,CSC,4,2,1.5,Theory,Y,N,Active,S009,15:30,1.5
+CSC 405,Distributed Systems,CSC,4,2,1.0,Theory,Y,N,Active,S001,15:30,1.0
+CSC 410,Compiler Construction,CSC,4,2,1.0,Theory,Y,N,Active,S026,15:30,1.0
+CSC 415,Research Methods,CSC,4,2,2.0,Theory,Y,N,Active,S014,15:30,2.0
+CSC 420,Professional Practice,CSC,4,2,1.5,Theory,Y,N,Active,S038,15:30,1.5
+CSC 425,Fundamentals of Computing,CSC,4,2,1.5,Theory,Y,N,Active,S031,15:30,1.5
+CSC 430,Discrete Mathematics,CSC,4,2,1.5,Theory,Y,N,Active,S015,15:30,1.5
+CSC 435,Programming Principles,CSC,4,2,1.0,Theory,Y,N,Active,S020,15:30,1.0
+CSC 440,Computer Systems,CSC,4,2,1.0,Theory,Y,N,Active,S020,15:30,1.0
+CSC 445,HCI Design Studio,CSC,4,2,2.0,Practical,N,Y,Active,S008,15:30,2.0
+CSC 450,Programming Laboratory,CSC,4,2,1.5,Practical,N,Y,Active,S015,15:30,1.5
