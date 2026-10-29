@@ -28,7 +28,7 @@ Work top to bottom. Do not skip Step 1 (secrets) before any commit.
 | 1 | Protect secrets + scaffold | DONE | `.gitignore`, `.env.example`, folder tree | Optional: add `DATABASE_URL` to local `.env` |
 | 2 | Tier 3 synthetic data | DONE | CSC-only CSVs; `AS2022468` IDs; credits max 2.0 | — |
 | 3 | Supabase schema + seed | DONE | Tables + RLS + Tier 3 seed in project | Optional: add `DATABASE_URL` to `.env` |
-| 4 | First safe commit & push | NEXT | Repo exists, **0 commits** | Commit without `.env`; push |
+| 4 | First safe commit & push | DONE | Pushed to GitHub without `.env` | — |
 | 5 | Module A — Course parser | TODO | — | `parser.py` + tests |
 | 6 | Module B — CSP scheduler | TODO | — | Conflict-free slot assignment |
 | 7 | Module C — GA optimiser | TODO | — | Soft-constraint fitness |
@@ -137,25 +137,26 @@ Tables visible in Supabase Dashboard; row counts match CSVs. **Met.**
 
 ## Step 4 — First safe commit & push
 
-**Status:** NEXT
+**Status:** DONE (29 Oct 2026)
 
-### What we will achieve
+### What we achieved
 - Version history on GitHub without leaking secrets
 - Backup of scaffold + synthetic data + migrations
+- Confirmed `.env` is gitignored and not in the remote tree
 
 ### Deliverables
-- [ ] First commit (README, EXECUTION_PLAN, `.gitignore`, `.env.example`, folders, `data/tier3/`, migrations)
-- [ ] `git push -u origin main`
-- [ ] Manual check on GitHub: **no** `.env` file
+- [x] First commit (README, EXECUTION_PLAN, `.gitignore`, `.env.example`, folders, `data/tier3/`, migrations)
+- [x] `git push -u origin main`
+- [x] Check: **no** `.env` file on GitHub
 
 ### Exit criteria
-GitHub shows the project; `.env` is absent remotely.
+GitHub shows the project; `.env` is absent remotely. **Met.**
 
 ---
 
 ## Step 5 — Module A: Course code parser
 
-**Status:** TODO
+**Status:** NEXT
 
 ### What we will achieve
 - Extract year, department, sequence, credits, exam type, duration, year-session from course records
@@ -308,8 +309,8 @@ Working system + evaluation results + clear statement of which data tier was use
 1. ~~**Step 1** — `.gitignore` + scaffold + `.env.example`~~ DONE
 2. ~~**Step 2** — Generate Tier 3 synthetic CSVs~~ DONE
 3. ~~**Step 3** — Supabase tables + seed~~ DONE
-4. **Step 4** — First commit & push (verify no secrets) ← next
-5. **Step 5** — Course parser
+4. ~~**Step 4** — First commit & push~~ DONE
+5. **Step 5** — Course parser ← next
 
 Start Exam Dept letter (Step 13) in parallel whenever supervisor is ready — it does not block coding.
 
